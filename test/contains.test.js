@@ -31,4 +31,18 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns true if the target value is among the values of the array', () => {
+    const drinks = ['Lemonade', 'Beer', 'Wine', 'Coffee'];
+    expect(_.contains(drinks, 'Beer')).toBe(true);
+  });
+
+  it('returns true if the target value is among the values of the object', () => {
+    const beverages = {
+      'beverage1': 'Water',
+      'beverage2': 'Coffee',
+      'beverage3':  {'Beer': 'Ale'}
+    };
+    expect(_.contains(beverages.beverage3, 'Ale')).toBe(true);
+  });
+
 });
