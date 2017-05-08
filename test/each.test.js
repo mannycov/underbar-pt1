@@ -39,5 +39,20 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+
+  it('iterates every key of an object, passing the value, the corresponding key, and the entire object to the callback', () => {
+    const obj2 = {
+      color: 'blue',
+      size: 4,
+      shape: 'rectangle',
+      flavor: null
+    };
+    let count = 0; 
+    _.each(obj2, function(value, key, iteratedObj) {
+      expect(value).toEqual(iteratedObj[key]);
+      count += 1;
+    });
+    expect(count).toBe(4);
+  })
 });
 
