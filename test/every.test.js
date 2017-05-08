@@ -17,5 +17,15 @@ describe('every()', () => {
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
 
+    it('returns true if all numbers in an array are greater than 1 and we test for such numbers', () => {
+      const nums = [2, 3, 4, 5];
+      expect(_.every(nums, num => num > 1)).toBe(true);
+    });
+
+    it('returns false if not all numbers in an array are greater than 1 and we test for such numbers', () => {
+      const nums = [1, 2, 3, 4, 5];
+      expect(_.every(nums, num => num > 1)).toBe(false);
+    });
+
   });
 });
