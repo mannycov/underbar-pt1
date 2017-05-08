@@ -18,4 +18,15 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('rejects number values from an object', () => {
+    const author = {
+      name: 'Jack Kerouac',
+      book: 'Dharma Bums',
+      age: 47
+    };
+
+    const personItems = _.reject(author, (value) => typeof(value) === 'number');
+    expect(personItems).toEqual(['Jack Kerouac', 'Dharma Bums']);
+  });
 });
