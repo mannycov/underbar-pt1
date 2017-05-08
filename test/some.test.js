@@ -11,4 +11,9 @@ describe('some()', () => {
     expect(_.some(nums, num => num % 2 === 1)).toBe(false);
   });
 
+  it('returns true if any item is a number', () => {
+    const mixed = [true, 'string', 5, null];
+    expect(_.some(mixed, item => !isNaN(item))).toBe(true);
+  });
+
 });
