@@ -26,4 +26,9 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('returns the index of a specified item in a given array', () => {
+    const arr = ['bodybuilding', 'powerlifting', 'olympic weightlifting'];
+    expect(_.indexOf(arr, 'powerlifting')).toBe(1);
+  });
+
 });
