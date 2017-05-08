@@ -9,6 +9,10 @@ describe('identity()', () => {
     expect(_.identity(5)).toBe(5);
   });
 
+  it('returns the string if given a string', () => {
+    expect(_.identity('code')).toBe('code');
+  });
+
   it('returns the same array if given an array', () => {
     const val = [1, 2, 3];
     expect(_.identity(val)).toBe(val);
@@ -20,4 +24,9 @@ describe('identity()', () => {
     };
     expect(_.identity(val)).toBe(val);
   });
+
+  it('returns the boolean if given the boolean', () => {
+    expect(_.identity(true)).toBe(true);
+  });
+
 });
