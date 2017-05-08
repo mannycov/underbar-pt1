@@ -23,4 +23,10 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('filters an array to only string values', () => {
+    const mixedArray = ['apples', 4, 'oranges', true, 'monkeys', null];
+    expect(_.filter(mixedArray, item => typeof(item) === 'string')).toEqual(['apples', 'oranges', 'monkeys']);
+  });
+  
 });
